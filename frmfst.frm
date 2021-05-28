@@ -1,0 +1,153 @@
+VERSION 5.00
+Begin VB.Form Form1 
+   Caption         =   "Login"
+   ClientHeight    =   3795
+   ClientLeft      =   120
+   ClientTop       =   465
+   ClientWidth     =   6255
+   ControlBox      =   0   'False
+   LinkTopic       =   "Form1"
+   ScaleHeight     =   3795
+   ScaleWidth      =   6255
+   StartUpPosition =   2  'CenterScreen
+   Begin VB.TextBox Txtusua 
+      Height          =   285
+      Left            =   2760
+      TabIndex        =   3
+      Top             =   1800
+      Width           =   1815
+   End
+   Begin VB.TextBox txtcontra 
+      Height          =   285
+      IMEMode         =   3  'DISABLE
+      Left            =   2760
+      PasswordChar    =   "*"
+      TabIndex        =   2
+      Top             =   2280
+      Width           =   1815
+   End
+   Begin VB.CommandButton cmdingre 
+      Caption         =   "Ingresar"
+      BeginProperty Font 
+         Name            =   "OCR A Extended"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Index           =   1
+      Left            =   1440
+      TabIndex        =   1
+      Top             =   3120
+      Width           =   1335
+   End
+   Begin VB.CommandButton cmdsalir 
+      Caption         =   "Salir"
+      BeginProperty Font 
+         Name            =   "OCR A Extended"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Index           =   1
+      Left            =   3000
+      TabIndex        =   0
+      Top             =   3120
+      Width           =   1335
+   End
+   Begin VB.Label Label4 
+      Alignment       =   2  'Center
+      Caption         =   "Comercial Carpio CC.CIA.LIDA"
+      BeginProperty Font 
+         Name            =   "Sitka Small"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   1200
+      TabIndex        =   7
+      Top             =   720
+      Width           =   4215
+   End
+   Begin VB.Label Label1 
+      Alignment       =   2  'Center
+      BackColor       =   &H80000003&
+      Caption         =   "Bienvenido"
+      BeginProperty Font 
+         Name            =   "OCR A Extended"
+         Size            =   26.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   1320
+      TabIndex        =   6
+      Top             =   0
+      Width           =   3735
+   End
+   Begin VB.Label Label2 
+      Alignment       =   2  'Center
+      Caption         =   "Usuario:"
+      BeginProperty Font 
+         Name            =   "OCR A Extended"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   255
+      Left            =   1080
+      TabIndex        =   5
+      Top             =   1800
+      Width           =   1455
+   End
+   Begin VB.Label Label3 
+      Alignment       =   2  'Center
+      Caption         =   "Contraseña:"
+      BeginProperty Font 
+         Name            =   "OCR A Extended"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   255
+      Left            =   720
+      TabIndex        =   4
+      Top             =   2280
+      Width           =   1935
+   End
+End
+Attribute VB_Name = "Form1"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Private Sub cmdingre_Click(Index As Integer)
+If Txtusua.Text ="cliente01" and txtcontra.Text
+
+End Sub
+
+Private Sub cmdsalir_Click(Index As Integer)
+If MsgBox("Desea cerrar el programa", vbQuestion + vbYesNo, "Cuadro informativo") = vbYes Then
+End
+End If
+End Sub
