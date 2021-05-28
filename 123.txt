@@ -1,5 +1,0 @@
-Requisitos:
--Facturación
--Productos
--Clientes
--Proveedores
