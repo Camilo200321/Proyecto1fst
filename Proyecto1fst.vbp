@@ -1,9 +1,10 @@
 Type=Exe
 Form=frmfst.frm
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\..\Windows\SysWOW64\stdole2.tlb#OLE Automation
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\..\..\Windows\SysWOW64\stdole2.tlb#OLE Automation
 Form=Proyecto1fst.frm
-IconForm="Form1"
-Startup="Form1"
+Form=Login.frm
+IconForm="frmlogin"
+Startup="frmlogin"
 Command32=""
 Name="Proyecto1"
 HelpContextID="0"

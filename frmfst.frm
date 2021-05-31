@@ -1,5 +1,5 @@
 VERSION 5.00
-Begin VB.Form Form1 
+Begin VB.Form frmlogin 
    Caption         =   "Login"
    ClientHeight    =   3795
    ClientLeft      =   120
@@ -136,13 +136,33 @@ Begin VB.Form Form1
       Width           =   1935
    End
 End
-Attribute VB_Name = "Form1"
+Attribute VB_Name = "frmlogin"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdingre_Click(Index As Integer)
-If Txtusua.Text ="cliente01" and txtcontra.Text
+If Txtusua.Text = "CarlosC" And txtcontra.Text = "mamidelia" Then
+frmmenu.Show
+frmlogin.Hide
+MsgBox "Bienvenido de nuevo Abg Carlos Carpio", 0, "Mensaje"
+
+ElseIf Txtusua = "" And txtcontra = "" Then
+MsgBox "Los campos son obligatorios", vbInformation, "dialogo"
+ElseIf Txtusua = "" Then
+MsgBox "El campo usuario es onligatorio", vbInformation, "dialogo"
+ElseIf txtcontra = "" Then
+MsgBox "El campo contraseña es onligatorio", vbInformation, "dialogo"
+Else
+MsgBox "Todos los campos ingresados son los incorrectos", vbCritical, "dialogo"
+Txtusua = ""
+txtcontra = ""
+End If
+
+
+
+
+
 
 End Sub
 
