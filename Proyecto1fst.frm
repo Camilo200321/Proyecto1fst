@@ -1,17 +1,17 @@
 VERSION 5.00
 Begin VB.Form frmmenu 
    Caption         =   "Menu"
-   ClientHeight    =   3075
+   ClientHeight    =   2115
    ClientLeft      =   225
    ClientTop       =   570
-   ClientWidth     =   5310
+   ClientWidth     =   4920
    ControlBox      =   0   'False
    LinkTopic       =   "Form2"
-   ScaleHeight     =   3075
-   ScaleWidth      =   5310
+   ScaleHeight     =   2115
+   ScaleWidth      =   4920
    StartUpPosition =   2  'CenterScreen
    Begin VB.Menu msrgcomprav 
-      Caption         =   "Registro de compra y venta"
+      Caption         =   "Registro de productos"
    End
    Begin VB.Menu msgastos 
       Caption         =   "Gastos"

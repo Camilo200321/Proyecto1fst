@@ -150,9 +150,10 @@ MsgBox "Bienvenido de nuevo Abg Carlos Carpio", 0, "Mensaje"
 ElseIf Txtusua = "" And txtcontra = "" Then
 MsgBox "Los campos son obligatorios", vbInformation, "dialogo"
 ElseIf Txtusua = "" Then
-MsgBox "El campo usuario es onligatorio", vbInformation, "dialogo"
+MsgBox "El campo usuario es obligatorio", vbInformation, "dialogo"
 ElseIf txtcontra = "" Then
-MsgBox "El campo contraseña es onligatorio", vbInformation, "dialogo"
+
+MsgBox "El campo contraseña es obliligatorio", vbInformation, "dialogo"
 Else
 MsgBox "Todos los campos ingresados son los incorrectos", vbCritical, "dialogo"
 Txtusua = ""

@@ -3,6 +3,7 @@ Form=frmfst.frm
 Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\..\..\Windows\SysWOW64\stdole2.tlb#OLE Automation
 Form=Proyecto1fst.frm
 Form=Login.frm
+Object={CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0; MSDATGRD.OCX
 IconForm="frmlogin"
 Startup="frmlogin"
 Command32=""
