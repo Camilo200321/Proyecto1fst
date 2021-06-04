@@ -13,10 +13,10 @@ Begin VB.Form frmproveedor
    StartUpPosition =   3  'Windows Default
    Begin MSAdodcLib.Adodc Adodc2 
       Height          =   375
-      Left            =   7560
+      Left            =   8880
       Top             =   2280
-      Width           =   2415
-      _ExtentX        =   4260
+      Width           =   1215
+      _ExtentX        =   2143
       _ExtentY        =   661
       ConnectMode     =   0
       CursorLocation  =   3
@@ -25,7 +25,7 @@ Begin VB.Form frmproveedor
       CommandTimeout  =   30
       CursorType      =   3
       LockType        =   3
-      CommandType     =   8
+      CommandType     =   2
       CursorOptions   =   0
       CacheSize       =   50
       MaxRecords      =   0
@@ -44,8 +44,8 @@ Begin VB.Form frmproveedor
       OtherAttributes =   ""
       UserName        =   ""
       Password        =   ""
-      RecordSource    =   ""
-      Caption         =   "Adodc1"
+      RecordSource    =   "Proveedor"
+      Caption         =   ""
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -58,6 +58,7 @@ Begin VB.Form frmproveedor
       _Version        =   393216
    End
    Begin MSDataGridLib.DataGrid DataGrid1 
+      Bindings        =   "frmproveedor.frx":0190
       Height          =   2775
       Left            =   960
       TabIndex        =   13
@@ -132,6 +133,8 @@ Begin VB.Form frmproveedor
       Width           =   9735
    End
    Begin VB.TextBox Text1 
+      DataField       =   "Ruc"
+      DataSource      =   "Adodc2"
       Height          =   495
       Left            =   1800
       TabIndex        =   7
@@ -139,6 +142,8 @@ Begin VB.Form frmproveedor
       Width           =   2775
    End
    Begin VB.TextBox Text4 
+      DataField       =   "Nombre"
+      DataSource      =   "Adodc2"
       Height          =   495
       Left            =   1800
       TabIndex        =   6
@@ -146,13 +151,15 @@ Begin VB.Form frmproveedor
       Width           =   2775
    End
    Begin VB.TextBox Text5 
+      DataField       =   "Contacto"
+      DataSource      =   "Adodc2"
       Height          =   495
       Left            =   7080
       TabIndex        =   5
       Top             =   960
       Width           =   2775
    End
-   Begin VB.CommandButton Command1 
+   Begin VB.CommandButton cmdNuevo 
       Caption         =   "Nuevo"
       BeginProperty Font 
          Name            =   "OCR A Extended"
@@ -220,7 +227,7 @@ Begin VB.Form frmproveedor
       Top             =   6120
       Width           =   1455
    End
-   Begin VB.CommandButton Command5 
+   Begin VB.CommandButton cmdCerrar 
       Caption         =   "Cerrar"
       BeginProperty Font 
          Name            =   "OCR A Extended"
@@ -293,7 +300,7 @@ Begin VB.Form frmproveedor
    End
    Begin VB.Label Label6 
       BackColor       =   &H00FFFFFF&
-      Caption         =   "Celular:"
+      Caption         =   "Contacto:"
       BeginProperty Font 
          Name            =   "OCR A Extended"
          Size            =   15.75
@@ -304,10 +311,10 @@ Begin VB.Form frmproveedor
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   5280
+      Left            =   5160
       TabIndex        =   9
       Top             =   1080
-      Width           =   1575
+      Width           =   1695
    End
 End
 Attribute VB_Name = "frmproveedor"
@@ -315,3 +322,50 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
+
+Private Sub cmdCerrar_Click()
+If cmdcerrar.Caption = "&Cancelar" Then
+        cmdcerrar.Caption = "&Cerrar"
+        cmdNuevo.Caption = "&Nuevo"
+        cmdEliminar.Enabled = True
+        txtNombre.Text = ""
+        txtApellido.Text = ""
+        txtCedula.Text = ""
+        
+        
+      
+    Else
+        If MsgBox("Esta seguro que desea cerrar el formulario?", vbQuestion + vbYesNo) = vbYes Then
+            Unload Me
+        End If
+    End If
+
+End Sub
+
+Private Sub cmdNuevo_Click()
+Adodc2.Recordset.AddNew
+If cmdNuevo.Caption = "&Nuevo" Then
+        Text1.Text = ""
+        Text4.Text = ""
+        Text5.Text = ""
+End If
+
+End Sub
+
+Private Sub Command2_Click()
+Adodc2.Recordset.Update
+
+End Sub
+
+Private Sub Command3_Click()
+Adodc2.Recordset.Delete
+Adodc2.Recordset.MoveNext
+If Adodc2.Recordset.EOF Then
+Adodc2.Recordset.MoveLast
+End If
+
+
+End Sub
+
+

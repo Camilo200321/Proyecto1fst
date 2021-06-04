@@ -11,6 +11,24 @@ Begin VB.Form frmcomprayv
    ScaleHeight     =   5895
    ScaleWidth      =   11565
    StartUpPosition =   3  'Windows Default
+   Begin VB.TextBox Text6 
+      DataField       =   "IDProveedor"
+      DataSource      =   "Adodc1"
+      Height          =   375
+      Left            =   2280
+      TabIndex        =   19
+      Top             =   2520
+      Width           =   1455
+   End
+   Begin VB.TextBox Text5 
+      DataField       =   "IDTipo de producto"
+      DataSource      =   "Adodc1"
+      Height          =   375
+      Left            =   1800
+      TabIndex        =   17
+      Top             =   1920
+      Width           =   1575
+   End
    Begin MSAdodcLib.Adodc Adodc1 
       Height          =   615
       Left            =   9000
@@ -25,7 +43,7 @@ Begin VB.Form frmcomprayv
       CommandTimeout  =   30
       CursorType      =   3
       LockType        =   3
-      CommandType     =   8
+      CommandType     =   2
       CursorOptions   =   0
       CacheSize       =   50
       MaxRecords      =   0
@@ -36,7 +54,7 @@ Begin VB.Form frmcomprayv
       BackColor       =   -2147483643
       ForeColor       =   -2147483640
       Orientation     =   0
-      Enabled         =   -1
+      Enabled         =   0
       Connect         =   $"Login.frx":0000
       OLEDBString     =   $"Login.frx":00C8
       OLEDBFile       =   ""
@@ -44,7 +62,7 @@ Begin VB.Form frmcomprayv
       OtherAttributes =   ""
       UserName        =   ""
       Password        =   ""
-      RecordSource    =   ""
+      RecordSource    =   "Producto"
       Caption         =   "Adodc1"
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
@@ -60,52 +78,54 @@ Begin VB.Form frmcomprayv
    Begin VB.ComboBox Combo2 
       Height          =   315
       Left            =   6840
-      TabIndex        =   17
+      TabIndex        =   16
       Top             =   1080
       Width           =   1095
    End
    Begin VB.TextBox Text4 
+      DataField       =   "Precio"
+      DataSource      =   "Adodc1"
       Height          =   375
-      Left            =   5520
-      TabIndex        =   16
+      Left            =   5640
+      TabIndex        =   15
       Top             =   2400
       Width           =   975
    End
    Begin VB.TextBox Text3 
+      DataField       =   "Porcentaje"
+      DataSource      =   "Adodc1"
       Height          =   375
       Left            =   5640
-      TabIndex        =   15
+      TabIndex        =   14
       Top             =   1800
       Width           =   975
    End
    Begin VB.TextBox Text2 
+      DataField       =   "Peso"
+      DataSource      =   "Adodc1"
       Height          =   375
       Left            =   5400
-      TabIndex        =   14
+      TabIndex        =   13
       Top             =   1080
       Width           =   1215
    End
    Begin VB.TextBox Text1 
+      DataField       =   "Fecha"
+      DataSource      =   "Adodc1"
       Height          =   375
       Left            =   1920
-      TabIndex        =   10
+      TabIndex        =   9
       Top             =   1080
       Width           =   1575
    End
-   Begin VB.ComboBox Combo1 
-      Height          =   315
-      Left            =   1920
-      TabIndex        =   8
-      Top             =   1920
-      Width           =   1455
-   End
    Begin MSDataGridLib.DataGrid DataGrid1 
+      Bindings        =   "Login.frx":0190
       Height          =   2175
       Left            =   120
       TabIndex        =   7
       Top             =   3000
-      Width           =   8415
-      _ExtentX        =   14843
+      Width           =   8655
+      _ExtentX        =   15266
       _ExtentY        =   3836
       _Version        =   393216
       HeadLines       =   1
@@ -186,7 +206,7 @@ Begin VB.Form frmcomprayv
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   8880
+      Left            =   9480
       TabIndex        =   3
       Top             =   360
       Width           =   1575
@@ -203,14 +223,14 @@ Begin VB.Form frmcomprayv
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   8880
+      Left            =   9480
       TabIndex        =   2
       Top             =   1080
       Width           =   1575
    End
    Begin VB.CommandButton cmdEliminar 
       Caption         =   "&Eliminar"
-      Enabled         =   0   'False
+      Default         =   -1  'True
       BeginProperty Font 
          Name            =   "OCR A Extended"
          Size            =   14.25
@@ -221,7 +241,7 @@ Begin VB.Form frmcomprayv
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   9000
+      Left            =   9480
       TabIndex        =   1
       Top             =   1920
       Width           =   1575
@@ -238,10 +258,28 @@ Begin VB.Form frmcomprayv
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   9000
+      Left            =   9600
       TabIndex        =   0
       Top             =   2760
       Width           =   1575
+   End
+   Begin VB.Label Label7 
+      BackColor       =   &H00FFFFFF&
+      Caption         =   "Proveedor:"
+      BeginProperty Font 
+         Name            =   "OCR A Extended"
+         Size            =   14.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   240
+      TabIndex        =   18
+      Top             =   2520
+      Width           =   1815
    End
    Begin VB.Label Label6 
       BackColor       =   &H00FFFFFF&
@@ -256,8 +294,8 @@ Begin VB.Form frmcomprayv
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   3960
-      TabIndex        =   13
+      Left            =   4200
+      TabIndex        =   12
       Top             =   2400
       Width           =   1335
    End
@@ -275,7 +313,7 @@ Begin VB.Form frmcomprayv
       EndProperty
       Height          =   375
       Left            =   3600
-      TabIndex        =   12
+      TabIndex        =   11
       Top             =   1800
       Width           =   1815
    End
@@ -293,7 +331,7 @@ Begin VB.Form frmcomprayv
       EndProperty
       Height          =   375
       Left            =   3840
-      TabIndex        =   11
+      TabIndex        =   10
       Top             =   1080
       Width           =   1335
    End
@@ -310,8 +348,8 @@ Begin VB.Form frmcomprayv
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   360
-      TabIndex        =   9
+      Left            =   120
+      TabIndex        =   8
       Top             =   1920
       Width           =   1335
    End
@@ -361,11 +399,12 @@ Private Sub cmdCerrar_Click()
 If cmdCerrar.Caption = "&Cancelar" Then
         cmdCerrar.Caption = "&Cerrar"
         cmdNuevo.Caption = "&Nuevo"
-        cmdEliminar.Enabled = False
+        cmdEliminar.Enabled = True
         Text1.Text = ""
         Text2.Text = ""
         Text3.Text = ""
         Text4.Text = ""
+        Text5.Text = ""
         Combo1.Text = ""
         Combo2.Text = ""
         
@@ -384,6 +423,8 @@ Adodc1.Recordset.Delete
 Adodc1.Recordset.MoveNext
 If Adodc1.Recordset.EOF Then
 Adodc1.Recordset.MoveLast
+End If
+
 
 End Sub
 
@@ -399,8 +440,7 @@ If cmdNuevo.Caption = "&Nuevo" Then
         Text2.Text = ""
         Text3.Text = ""
         Text4.Text = ""
-        Combo1.Text = ""
-        Combo2.Text = ""
+        Text5.Text = ""
         
         
         
@@ -408,8 +448,7 @@ If cmdNuevo.Caption = "&Nuevo" Then
 End Sub
 
 Private Sub Form_Load()
-Combo1.AddItem "Seco"
-Combo1.AddItem "baba"
+
 Combo2.AddItem "latas"
 Combo2.AddItem "libras"
 End Sub

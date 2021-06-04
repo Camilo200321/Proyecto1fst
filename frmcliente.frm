@@ -11,12 +11,12 @@ Begin VB.Form frmcliente
    ScaleWidth      =   12555
    StartUpPosition =   3  'Windows Default
    Begin MSAdodcLib.Adodc Adodc3 
-      Height          =   735
+      Height          =   375
       Left            =   9000
-      Top             =   1560
-      Width           =   2055
-      _ExtentX        =   3625
-      _ExtentY        =   1296
+      Top             =   1920
+      Width           =   1335
+      _ExtentX        =   2355
+      _ExtentY        =   661
       ConnectMode     =   0
       CursorLocation  =   3
       IsolationLevel  =   -1
@@ -24,7 +24,7 @@ Begin VB.Form frmcliente
       CommandTimeout  =   30
       CursorType      =   3
       LockType        =   3
-      CommandType     =   8
+      CommandType     =   2
       CursorOptions   =   0
       CacheSize       =   50
       MaxRecords      =   0
@@ -43,8 +43,8 @@ Begin VB.Form frmcliente
       OtherAttributes =   ""
       UserName        =   ""
       Password        =   ""
-      RecordSource    =   ""
-      Caption         =   "Adodc1"
+      RecordSource    =   "Cliente"
+      Caption         =   ""
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -56,23 +56,9 @@ Begin VB.Form frmcliente
       EndProperty
       _Version        =   393216
    End
-   Begin VB.TextBox Text1 
-      BeginProperty Font 
-         Name            =   "MS Sans Serif"
-         Size            =   12
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   495
-      Left            =   2640
-      TabIndex        =   14
-      Top             =   3240
-      Width           =   3255
-   End
    Begin VB.TextBox txtNombre 
+      DataField       =   "Nombre"
+      DataSource      =   "Adodc3"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   12
@@ -89,6 +75,8 @@ Begin VB.Form frmcliente
       Width           =   3255
    End
    Begin VB.TextBox txtApellido 
+      DataField       =   "Apellido"
+      DataSource      =   "Adodc3"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   12
@@ -104,7 +92,9 @@ Begin VB.Form frmcliente
       Top             =   1680
       Width           =   3255
    End
-   Begin VB.TextBox txtUsuario 
+   Begin VB.TextBox txtCedula 
+      DataField       =   "Cedula"
+      DataSource      =   "Adodc3"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   12
@@ -202,26 +192,8 @@ Begin VB.Form frmcliente
       Height          =   615
       Left            =   6960
       TabIndex        =   0
-      Top             =   4080
+      Top             =   4200
       Width           =   1935
-   End
-   Begin VB.Label Label6 
-      AutoSize        =   -1  'True
-      Caption         =   "Cedula"
-      BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   18
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   840
-      TabIndex        =   13
-      Top             =   3360
-      Width           =   1260
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
@@ -320,3 +292,44 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
+Private Sub cmdBuscar_Click()
+
+End Sub
+
+Private Sub cmdCerrar_Click()
+If cmdcerrar.Caption = "&Cancelar" Then
+        cmdcerrar.Caption = "&Cerrar"
+        cmdNuevo.Caption = "&Nuevo"
+        cmdEliminar.Enabled = True
+        txtNombre.Text = ""
+        txtApellido.Text = ""
+        txtCedula.Text = ""
+        
+        
+      
+    Else
+        If MsgBox("Esta seguro que desea cerrar el formulario?", vbQuestion + vbYesNo) = vbYes Then
+            Unload Me
+        End If
+    End If
+End Sub
+
+Private Sub cmdEliminar_Click()
+Adodc3.Recordset.Delete
+Adodc3.Recordset.MoveNext
+If Adodc3.Recordset.EOF Then
+Adodc3.Recordset.MoveLast
+End Sub
+
+Private Sub cmdGuardar_Click()
+Adodc3.Recordset.Update
+End Sub
+
+Private Sub cmdNuevo_Click()
+Adodc3.Recordset.AddNew
+If cmdNuevo.Caption = "&Nuevo" Then
+        txtNombre.Text = ""
+        txtApellido.Text = ""
+        txtCedula.Text = ""
+End If
+End Sub
