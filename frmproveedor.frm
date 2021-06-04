@@ -37,8 +37,8 @@ Begin VB.Form frmproveedor
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   ""
-      OLEDBString     =   ""
+      Connect         =   $"frmproveedor.frx":0000
+      OLEDBString     =   $"frmproveedor.frx":00C8
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""

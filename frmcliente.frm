@@ -36,8 +36,8 @@ Begin VB.Form frmcliente
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   ""
-      OLEDBString     =   ""
+      Connect         =   $"frmcliente.frx":0000
+      OLEDBString     =   $"frmcliente.frx":00C8
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -319,10 +319,4 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub Label2_Click()
 
-End Sub
-
-Private Sub txtUsuario_Change()
-
-End Sub

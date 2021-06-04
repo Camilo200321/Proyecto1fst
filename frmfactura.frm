@@ -103,9 +103,9 @@ Begin VB.Form Form1
             Strikethrough   =   0   'False
          EndProperty
          Height          =   495
-         Left            =   600
+         Left            =   480
          TabIndex        =   16
-         Top             =   5880
+         Top             =   6240
          Width           =   1335
       End
       Begin VB.TextBox txttotalfactura 
