@@ -2,26 +2,33 @@ VERSION 5.00
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Begin VB.Form Form1 
    Caption         =   "Form1"
-   ClientHeight    =   8550
+   ClientHeight    =   8880
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   13455
+   ClientWidth     =   14160
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8550
-   ScaleWidth      =   13455
+   ScaleHeight     =   8880
+   ScaleWidth      =   14160
    StartUpPosition =   3  'Windows Default
    Begin VB.PictureBox SSTab1 
       BackColor       =   &H00E0E0E0&
       FillColor       =   &H00E0E0E0&
       FillStyle       =   2  'Horizontal Line
       ForeColor       =   &H8000000B&
-      Height          =   7245
-      Left            =   1440
-      ScaleHeight     =   7185
+      Height          =   8205
+      Left            =   1800
+      ScaleHeight     =   8145
       ScaleWidth      =   10065
       TabIndex        =   1
-      Top             =   1200
+      Top             =   480
       Width           =   10125
+      Begin VB.TextBox Text1 
+         Height          =   285
+         Left            =   7560
+         TabIndex        =   37
+         Top             =   360
+         Width           =   1575
+      End
       Begin VB.Frame Frame2 
          Caption         =   "Cantidad"
          BeginProperty Font 
@@ -105,32 +112,32 @@ Begin VB.Form Form1
          Height          =   495
          Left            =   480
          TabIndex        =   16
-         Top             =   6240
+         Top             =   6480
          Width           =   1335
       End
       Begin VB.TextBox txttotalfactura 
          Height          =   285
-         Left            =   4560
+         Left            =   4680
          TabIndex        =   15
-         Top             =   5880
+         Top             =   6240
          Width           =   2655
       End
       Begin VB.TextBox txtsubtotal 
          Height          =   285
          Left            =   4680
          TabIndex        =   14
-         Top             =   5280
+         Top             =   5520
          Width           =   2655
       End
       Begin VB.TextBox txtigv 
          Height          =   285
          Left            =   840
          TabIndex        =   13
-         Top             =   5400
+         Top             =   5760
          Width           =   2055
       End
       Begin VB.Frame Frame1 
-         Caption         =   "Factura a Cliente"
+         Caption         =   "Detalle de producto"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   15
@@ -144,39 +151,39 @@ Begin VB.Form Form1
          Height          =   1935
          Left            =   240
          TabIndex        =   2
-         Top             =   1200
-         Width           =   7455
+         Top             =   1560
+         Width           =   9255
          Begin VB.TextBox txtdistrito 
             Height          =   285
-            Left            =   5040
+            Left            =   6240
             TabIndex        =   7
             Top             =   1320
             Width           =   2175
          End
          Begin VB.TextBox txtruc 
             Height          =   285
-            Left            =   4680
+            Left            =   6600
             TabIndex        =   6
-            Top             =   600
+            Top             =   480
             Width           =   1575
          End
          Begin VB.TextBox txttelefono 
             Height          =   285
-            Left            =   1680
+            Left            =   2160
             TabIndex        =   5
             Top             =   1440
             Width           =   2055
          End
          Begin VB.TextBox txtdireccion 
             Height          =   285
-            Left            =   1680
+            Left            =   1920
             TabIndex        =   4
             Top             =   960
             Width           =   2055
          End
          Begin VB.PictureBox dcbonombre 
             Height          =   315
-            Left            =   1440
+            Left            =   1920
             ScaleHeight     =   255
             ScaleWidth      =   2115
             TabIndex        =   3
@@ -184,7 +191,7 @@ Begin VB.Form Form1
             Width           =   2175
          End
          Begin VB.Label Label8 
-            Caption         =   "Ruc:"
+            Caption         =   "Total:"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   12
@@ -195,13 +202,13 @@ Begin VB.Form Form1
                Strikethrough   =   0   'False
             EndProperty
             Height          =   375
-            Left            =   3960
+            Left            =   5400
             TabIndex        =   12
-            Top             =   600
+            Top             =   1200
             Width           =   975
          End
          Begin VB.Label Label7 
-            Caption         =   "Distrito:"
+            Caption         =   "IDProducto:"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   12
@@ -212,13 +219,13 @@ Begin VB.Form Form1
                Strikethrough   =   0   'False
             EndProperty
             Height          =   375
-            Left            =   3960
+            Left            =   4920
             TabIndex        =   11
-            Top             =   1320
+            Top             =   480
             Width           =   1335
          End
          Begin VB.Label Label6 
-            Caption         =   "Telefono"
+            Caption         =   "Precio Unitario"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   12
@@ -232,10 +239,10 @@ Begin VB.Form Form1
             Left            =   120
             TabIndex        =   10
             Top             =   1440
-            Width           =   1335
+            Width           =   2055
          End
          Begin VB.Label Label5 
-            Caption         =   "Dirección:"
+            Caption         =   "Cantidad:"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   12
@@ -252,7 +259,7 @@ Begin VB.Form Form1
             Width           =   1215
          End
          Begin VB.Label Label3 
-            Caption         =   "Nombre:"
+            Caption         =   "Descripción:"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
                Size            =   12
@@ -266,14 +273,14 @@ Begin VB.Form Form1
             Left            =   120
             TabIndex        =   8
             Top             =   480
-            Width           =   1095
+            Width           =   1335
          End
       End
       Begin MSDataGridLib.DataGrid DataGrid1 
          Height          =   1695
          Left            =   240
          TabIndex        =   24
-         Top             =   3240
+         Top             =   3720
          Width           =   7455
          _ExtentX        =   13150
          _ExtentY        =   2990
@@ -492,7 +499,7 @@ Begin VB.Form Form1
          Width           =   3135
       End
       Begin VB.Label Label11 
-         Caption         =   "Total Factura:"
+         Caption         =   "Sub Total:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   12
@@ -504,13 +511,13 @@ Begin VB.Form Form1
          EndProperty
          ForeColor       =   &H00404000&
          Height          =   495
-         Left            =   2760
+         Left            =   2880
          TabIndex        =   30
-         Top             =   5760
+         Top             =   6120
          Width           =   1695
       End
       Begin VB.Label Label10 
-         Caption         =   "Sub Total:"
+         Caption         =   "IVA:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   12
@@ -524,11 +531,11 @@ Begin VB.Form Form1
          Height          =   375
          Left            =   3240
          TabIndex        =   29
-         Top             =   5280
+         Top             =   5520
          Width           =   1575
       End
       Begin VB.Label Label9 
-         Caption         =   "IGV:"
+         Caption         =   "Valor:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   12
@@ -542,11 +549,11 @@ Begin VB.Form Form1
          Height          =   375
          Left            =   120
          TabIndex        =   28
-         Top             =   5400
+         Top             =   5760
          Width           =   735
       End
       Begin VB.Label Label2 
-         Caption         =   "Ruc:000125"
+         Caption         =   "NFAC:"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   15
@@ -558,13 +565,12 @@ Begin VB.Form Form1
          EndProperty
          ForeColor       =   &H00800000&
          Height          =   375
-         Left            =   4200
+         Left            =   5520
          TabIndex        =   27
-         Top             =   600
+         Top             =   360
          Width           =   1815
       End
       Begin VB.Label Label1 
-         Caption         =   "Proceso de Facturación"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
             Size            =   15
@@ -576,10 +582,10 @@ Begin VB.Form Form1
          EndProperty
          ForeColor       =   &H00800000&
          Height          =   375
-         Left            =   360
+         Left            =   800
          TabIndex        =   26
          Top             =   360
-         Width           =   3255
+         Width           =   2775
       End
    End
    Begin VB.Label Label4 

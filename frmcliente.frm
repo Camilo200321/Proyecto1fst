@@ -292,10 +292,6 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
-Private Sub cmdBuscar_Click()
-
-End Sub
-
 Private Sub cmdCerrar_Click()
 If cmdcerrar.Caption = "&Cancelar" Then
         cmdcerrar.Caption = "&Cerrar"
@@ -319,6 +315,7 @@ Adodc3.Recordset.Delete
 Adodc3.Recordset.MoveNext
 If Adodc3.Recordset.EOF Then
 Adodc3.Recordset.MoveLast
+End If
 End Sub
 
 Private Sub cmdGuardar_Click()

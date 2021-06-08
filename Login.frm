@@ -11,30 +11,88 @@ Begin VB.Form frmcomprayv
    ScaleHeight     =   5895
    ScaleWidth      =   11565
    StartUpPosition =   3  'Windows Default
+   Begin VB.TextBox Text5 
+      DataField       =   "IDTipo de producto"
+      DataSource      =   "Adodc1"
+      Height          =   375
+      Left            =   1560
+      TabIndex        =   20
+      Top             =   1920
+      Width           =   1215
+   End
+   Begin MSAdodcLib.Adodc Adodc2 
+      Height          =   495
+      Left            =   9600
+      Top             =   4800
+      Width           =   1440
+      _ExtentX        =   2540
+      _ExtentY        =   873
+      ConnectMode     =   0
+      CursorLocation  =   3
+      IsolationLevel  =   -1
+      ConnectionTimeout=   15
+      CommandTimeout  =   30
+      CursorType      =   3
+      LockType        =   3
+      CommandType     =   2
+      CursorOptions   =   0
+      CacheSize       =   50
+      MaxRecords      =   0
+      BOFAction       =   0
+      EOFAction       =   0
+      ConnectStringType=   1
+      Appearance      =   1
+      BackColor       =   -2147483643
+      ForeColor       =   -2147483640
+      Orientation     =   0
+      Enabled         =   -1
+      Connect         =   $"Login.frx":0000
+      OLEDBString     =   $"Login.frx":00C8
+      OLEDBFile       =   ""
+      DataSourceName  =   ""
+      OtherAttributes =   ""
+      UserName        =   ""
+      Password        =   ""
+      RecordSource    =   "Tipodeproducto"
+      Caption         =   "Adodc2"
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      _Version        =   393216
+   End
+   Begin VB.ComboBox Combo1 
+      DataField       =   "Tipo"
+      DataSource      =   "Adodc2"
+      Height          =   315
+      ItemData        =   "Login.frx":0190
+      Left            =   2760
+      List            =   "Login.frx":019A
+      TabIndex        =   19
+      Text            =   "Seleccionar"
+      Top             =   1920
+      Width           =   1335
+   End
    Begin VB.TextBox Text6 
       DataField       =   "IDProveedor"
       DataSource      =   "Adodc1"
       Height          =   375
       Left            =   2280
-      TabIndex        =   19
+      TabIndex        =   18
       Top             =   2520
       Width           =   1455
    End
-   Begin VB.TextBox Text5 
-      DataField       =   "IDTipo de producto"
-      DataSource      =   "Adodc1"
-      Height          =   375
-      Left            =   1800
-      TabIndex        =   17
-      Top             =   1920
-      Width           =   1575
-   End
    Begin MSAdodcLib.Adodc Adodc1 
       Height          =   615
-      Left            =   9000
+      Left            =   9720
       Top             =   3840
-      Width           =   2280
-      _ExtentX        =   4022
+      Width           =   1440
+      _ExtentX        =   2540
       _ExtentY        =   1085
       ConnectMode     =   0
       CursorLocation  =   3
@@ -55,15 +113,15 @@ Begin VB.Form frmcomprayv
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   0
-      Connect         =   $"Login.frx":0000
-      OLEDBString     =   $"Login.frx":00C8
+      Connect         =   $"Login.frx":01AA
+      OLEDBString     =   $"Login.frx":0272
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
       UserName        =   ""
       Password        =   ""
       RecordSource    =   "Producto"
-      Caption         =   "Adodc1"
+      Caption         =   ""
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -95,7 +153,7 @@ Begin VB.Form frmcomprayv
       DataField       =   "Porcentaje"
       DataSource      =   "Adodc1"
       Height          =   375
-      Left            =   5640
+      Left            =   6480
       TabIndex        =   14
       Top             =   1800
       Width           =   975
@@ -119,7 +177,7 @@ Begin VB.Form frmcomprayv
       Width           =   1575
    End
    Begin MSDataGridLib.DataGrid DataGrid1 
-      Bindings        =   "Login.frx":0190
+      Bindings        =   "Login.frx":033A
       Height          =   2175
       Left            =   120
       TabIndex        =   7
@@ -277,7 +335,7 @@ Begin VB.Form frmcomprayv
       EndProperty
       Height          =   375
       Left            =   240
-      TabIndex        =   18
+      TabIndex        =   17
       Top             =   2520
       Width           =   1815
    End
@@ -312,7 +370,7 @@ Begin VB.Form frmcomprayv
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   3600
+      Left            =   4320
       TabIndex        =   11
       Top             =   1800
       Width           =   1815
@@ -396,8 +454,8 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdCerrar_Click()
-If cmdCerrar.Caption = "&Cancelar" Then
-        cmdCerrar.Caption = "&Cerrar"
+If cmdcerrar.Caption = "&Cancelar" Then
+        cmdcerrar.Caption = "&Cerrar"
         cmdNuevo.Caption = "&Nuevo"
         cmdEliminar.Enabled = True
         Text1.Text = ""
@@ -405,6 +463,7 @@ If cmdCerrar.Caption = "&Cancelar" Then
         Text3.Text = ""
         Text4.Text = ""
         Text5.Text = ""
+        Text6.Text = ""
         Combo1.Text = ""
         Combo2.Text = ""
         
@@ -441,14 +500,39 @@ If cmdNuevo.Caption = "&Nuevo" Then
         Text3.Text = ""
         Text4.Text = ""
         Text5.Text = ""
+        Text6.Text = ""
         
-        
-        
-    End If
+             
+ End If
+End Sub
+
+Private Sub Combo1_Click()
+If Combo1.Text = "Seco" Then
+a = 1
+Text5.Text = a
+
+Else
+a = 2
+Text5.Text = a
+
+
+
+
+
+End If
+
+
+
 End Sub
 
 Private Sub Form_Load()
+Adodc1.CursorLocation = adUseClient
+Adodc1.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & App.Path & " \Comercial'Carpio CC.CIA.LTDA1'.mdb;Persist Security Info=False"
 
 Combo2.AddItem "latas"
 Combo2.AddItem "libras"
+End Sub
+
+Private Sub Text5_Click()
+
 End Sub
