@@ -1,18 +1,19 @@
 VERSION 5.00
 Begin VB.Form frmlogin 
    Caption         =   "Login"
-   ClientHeight    =   3795
+   ClientHeight    =   4755
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   6255
+   ClientWidth     =   7485
    ControlBox      =   0   'False
    LinkTopic       =   "Form1"
-   ScaleHeight     =   3795
-   ScaleWidth      =   6255
+   Picture         =   "frmfst.frx":0000
+   ScaleHeight     =   4755
+   ScaleWidth      =   7485
    StartUpPosition =   2  'CenterScreen
    Begin VB.TextBox Txtusua 
       Height          =   285
-      Left            =   2760
+      Left            =   3360
       TabIndex        =   3
       Top             =   1800
       Width           =   1815
@@ -20,7 +21,7 @@ Begin VB.Form frmlogin
    Begin VB.TextBox txtcontra 
       Height          =   285
       IMEMode         =   3  'DISABLE
-      Left            =   2760
+      Left            =   3360
       PasswordChar    =   "*"
       TabIndex        =   2
       Top             =   2280
@@ -57,13 +58,14 @@ Begin VB.Form frmlogin
       EndProperty
       Height          =   375
       Index           =   1
-      Left            =   3000
+      Left            =   3840
       TabIndex        =   0
       Top             =   3120
       Width           =   1335
    End
    Begin VB.Label Label4 
       Alignment       =   2  'Center
+      BackColor       =   &H00E0E0E0&
       Caption         =   "Comercial Carpio CC.CIA.LIDA"
       BeginProperty Font 
          Name            =   "Sitka Small"
@@ -112,7 +114,7 @@ Begin VB.Form frmlogin
          Strikethrough   =   0   'False
       EndProperty
       Height          =   255
-      Left            =   1080
+      Left            =   1680
       TabIndex        =   5
       Top             =   1800
       Width           =   1455
@@ -130,7 +132,7 @@ Begin VB.Form frmlogin
          Strikethrough   =   0   'False
       EndProperty
       Height          =   255
-      Left            =   720
+      Left            =   1200
       TabIndex        =   4
       Top             =   2280
       Width           =   1935
@@ -172,3 +174,4 @@ If MsgBox("Desea cerrar el programa", vbQuestion + vbYesNo, "Cuadro informativo"
 End
 End If
 End Sub
+

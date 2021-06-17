@@ -1,30 +1,33 @@
 Attribute VB_Name = "Module1"
 Global base As New ADODB.Connection
 Global a As Integer
-Global tipodep As New ADODB.Recordset
-Global producto As New ADODB.Recordset
+Public TOT As Double
+Public Fila As Integer
+Public x As Double
+Global Anapro As Integer
+Global Precio As Double
+Global Cliente As Integer
+Global RsTemporal As New ADODB.Recordset
+Sub main()
 
-Public Sub conecta()
 
 With base
-.CursorLocation = adUseClient
-.Open = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & App.Path & " \Comercial'Carpio CC.CIA.LTDA1'.mdb;Persist Security Info=False"
-frmcomprayv.Show
+        .CursorLocation = adUseClient 'Vamos a ser clientes de la base de datos
+        'Conexion a la base de datos
+        .Open "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\ASUS\Dropbox\Mi PC (DESKTOP-5BOUC4M)\Desktop\proyecto_git\prueba\Proyecto1fst\Comercial'Carpio CC.CIA.LTDA1'.mdb;Persist Security Info=False"
+        
+        
+        
+        'frmUsuarios.Show 'Abrir el formulario para que nos presente los datos
 End With
-With producto
-If .State = 1 Then
-.Close
-End If
-.Open "select * from Producto", base, adOpenDynamic, adLockOptimistic
-End With
-With tipodep
-If .State = 1 Then
-.Close
-End If
-.Open "select * from Tipodeproducto", base, adOpenDynamic, adLockOptimistic
-End With
-
-
 End Sub
+
+
+
+
+
+
+
+
 
 

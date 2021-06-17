@@ -1,17 +1,26 @@
 VERSION 5.00
 Begin VB.Form frmmenu 
+   Appearance      =   0  'Flat
+   BackColor       =   &H80000005&
+   BorderStyle     =   1  'Fixed Single
    Caption         =   "Menu"
-   ClientHeight    =   3090
-   ClientLeft      =   225
-   ClientTop       =   570
-   ClientWidth     =   6555
+   ClientHeight    =   8475
+   ClientLeft      =   150
+   ClientTop       =   795
+   ClientWidth     =   9765
    ControlBox      =   0   'False
+   DrawStyle       =   3  'Dash-Dot
+   FillColor       =   &H00E0E0E0&
+   FillStyle       =   7  'Diagonal Cross
    LinkTopic       =   "Form2"
-   ScaleHeight     =   3090
-   ScaleWidth      =   6555
-   StartUpPosition =   2  'CenterScreen
-   Begin VB.Menu msganancia 
-      Caption         =   "Ganancias"
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   Picture         =   "Proyecto1fst.frx":0000
+   ScaleHeight     =   8475
+   ScaleWidth      =   9765
+   StartUpPosition =   3  'Windows Default
+   Begin VB.Menu msfactura 
+      Caption         =   "Factura"
    End
    Begin VB.Menu msrgcomprav 
       Caption         =   "Registro de productos"
@@ -40,6 +49,12 @@ End Sub
 Private Sub mscliente_Click()
 frmcliente.Show
 frmmenu.Hide
+End Sub
+
+Private Sub msfactura_Click()
+frmfactura.Show
+frmmenu.Hide
+
 End Sub
 
 Private Sub msproveedor_Click()

@@ -8,12 +8,14 @@ Begin VB.Form frmcomprayv
    ClientTop       =   465
    ClientWidth     =   11565
    LinkTopic       =   "Form1"
+   Picture         =   "Login.frx":0000
    ScaleHeight     =   5895
    ScaleWidth      =   11565
-   StartUpPosition =   3  'Windows Default
+   StartUpPosition =   2  'CenterScreen
    Begin VB.TextBox Text5 
       DataField       =   "IDTipo de producto"
       DataSource      =   "Adodc1"
+      Enabled         =   0   'False
       Height          =   375
       Left            =   1560
       TabIndex        =   20
@@ -24,6 +26,7 @@ Begin VB.Form frmcomprayv
       Height          =   495
       Left            =   9600
       Top             =   4800
+      Visible         =   0   'False
       Width           =   1440
       _ExtentX        =   2540
       _ExtentY        =   873
@@ -46,8 +49,8 @@ Begin VB.Form frmcomprayv
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   $"Login.frx":0000
-      OLEDBString     =   $"Login.frx":00C8
+      Connect         =   $"Login.frx":1DEC9
+      OLEDBString     =   $"Login.frx":1DF91
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -70,13 +73,13 @@ Begin VB.Form frmcomprayv
       DataField       =   "Tipo"
       DataSource      =   "Adodc2"
       Height          =   315
-      ItemData        =   "Login.frx":0190
-      Left            =   2760
-      List            =   "Login.frx":019A
+      ItemData        =   "Login.frx":1E059
+      Left            =   2880
+      List            =   "Login.frx":1E063
       TabIndex        =   19
       Text            =   "Seleccionar"
       Top             =   1920
-      Width           =   1335
+      Width           =   1215
    End
    Begin VB.TextBox Text6 
       DataField       =   "IDProveedor"
@@ -91,6 +94,7 @@ Begin VB.Form frmcomprayv
       Height          =   615
       Left            =   9720
       Top             =   3840
+      Visible         =   0   'False
       Width           =   1440
       _ExtentX        =   2540
       _ExtentY        =   1085
@@ -113,8 +117,8 @@ Begin VB.Form frmcomprayv
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   0
-      Connect         =   $"Login.frx":01AA
-      OLEDBString     =   $"Login.frx":0272
+      Connect         =   $"Login.frx":1E073
+      OLEDBString     =   $"Login.frx":1E13B
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -177,7 +181,7 @@ Begin VB.Form frmcomprayv
       Width           =   1575
    End
    Begin MSDataGridLib.DataGrid DataGrid1 
-      Bindings        =   "Login.frx":033A
+      Bindings        =   "Login.frx":1E203
       Height          =   2175
       Left            =   120
       TabIndex        =   7
@@ -186,6 +190,8 @@ Begin VB.Form frmcomprayv
       _ExtentX        =   15266
       _ExtentY        =   3836
       _Version        =   393216
+      BackColor       =   -2147483641
+      ForeColor       =   16777215
       HeadLines       =   1
       RowHeight       =   15
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -242,14 +248,14 @@ Begin VB.Form frmcomprayv
       EndProperty
    End
    Begin VB.PictureBox Picture1 
-      BackColor       =   &H000000FF&
+      BackColor       =   &H00000000&
       Height          =   135
       Left            =   0
       ScaleHeight     =   75
-      ScaleWidth      =   7155
+      ScaleWidth      =   7755
       TabIndex        =   4
       Top             =   720
-      Width           =   7215
+      Width           =   7815
    End
    Begin VB.CommandButton cmdNuevo 
       BackColor       =   &H00FFFFFF&
@@ -316,13 +322,13 @@ Begin VB.Form frmcomprayv
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   9600
+      Left            =   9480
       TabIndex        =   0
       Top             =   2760
       Width           =   1575
    End
    Begin VB.Label Label7 
-      BackColor       =   &H00FFFFFF&
+      BackColor       =   &H00000000&
       Caption         =   "Proveedor:"
       BeginProperty Font 
          Name            =   "OCR A Extended"
@@ -333,6 +339,7 @@ Begin VB.Form frmcomprayv
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   240
       TabIndex        =   17
@@ -340,7 +347,7 @@ Begin VB.Form frmcomprayv
       Width           =   1815
    End
    Begin VB.Label Label6 
-      BackColor       =   &H00FFFFFF&
+      BackColor       =   &H00000000&
       Caption         =   "Precio:"
       BeginProperty Font 
          Name            =   "OCR A Extended"
@@ -351,14 +358,15 @@ Begin VB.Form frmcomprayv
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   375
-      Left            =   4200
+      Left            =   4080
       TabIndex        =   12
       Top             =   2400
       Width           =   1335
    End
    Begin VB.Label Label5 
-      BackColor       =   &H00FFFFFF&
+      BackColor       =   &H00000000&
       Caption         =   "Porcentaje:"
       BeginProperty Font 
          Name            =   "OCR A Extended"
@@ -369,6 +377,7 @@ Begin VB.Form frmcomprayv
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   4320
       TabIndex        =   11
@@ -376,7 +385,7 @@ Begin VB.Form frmcomprayv
       Width           =   1815
    End
    Begin VB.Label Label4 
-      BackColor       =   &H00FFFFFF&
+      BackColor       =   &H00000000&
       Caption         =   "Peso:"
       BeginProperty Font 
          Name            =   "OCR A Extended"
@@ -387,6 +396,7 @@ Begin VB.Form frmcomprayv
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   3840
       TabIndex        =   10
@@ -394,7 +404,7 @@ Begin VB.Form frmcomprayv
       Width           =   1335
    End
    Begin VB.Label Label3 
-      BackColor       =   &H00FFFFFF&
+      BackColor       =   &H00000000&
       Caption         =   "Tipo:"
       BeginProperty Font 
          Name            =   "OCR A Extended"
@@ -405,6 +415,7 @@ Begin VB.Form frmcomprayv
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   120
       TabIndex        =   8
@@ -413,6 +424,7 @@ Begin VB.Form frmcomprayv
    End
    Begin VB.Label Label1 
       BackColor       =   &H00FFFFFF&
+      BackStyle       =   0  'Transparent
       Caption         =   "Producto"
       BeginProperty Font 
          Name            =   "OCR A Extended"
@@ -423,14 +435,15 @@ Begin VB.Form frmcomprayv
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00E0E0E0&
       Height          =   615
-      Left            =   2040
+      Left            =   2880
       TabIndex        =   6
-      Top             =   0
-      Width           =   3255
+      Top             =   120
+      Width           =   2415
    End
    Begin VB.Label Label2 
-      BackColor       =   &H00FFFFFF&
+      BackColor       =   &H00000000&
       Caption         =   "Fecha:"
       BeginProperty Font 
          Name            =   "OCR A Extended"
@@ -441,10 +454,11 @@ Begin VB.Form frmcomprayv
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   360
       TabIndex        =   5
-      Top             =   1200
+      Top             =   1080
       Width           =   1335
    End
 End
@@ -454,8 +468,8 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub cmdCerrar_Click()
-If cmdcerrar.Caption = "&Cancelar" Then
-        cmdcerrar.Caption = "&Cerrar"
+If cmdCerrar.Caption = "&Cancelar" Then
+        cmdCerrar.Caption = "&Cerrar"
         cmdNuevo.Caption = "&Nuevo"
         cmdEliminar.Enabled = True
         Text1.Text = ""
@@ -474,6 +488,9 @@ If cmdcerrar.Caption = "&Cancelar" Then
             Unload Me
         End If
     End If
+    frmcomprayv.Hide
+    frmmenu.Show
+    
 
 End Sub
 
@@ -533,6 +550,3 @@ Combo2.AddItem "latas"
 Combo2.AddItem "libras"
 End Sub
 
-Private Sub Text5_Click()
-
-End Sub

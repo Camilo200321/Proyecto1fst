@@ -1,20 +1,58 @@
 VERSION 5.00
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
-Begin VB.Form frmbuscarusuario 
-   Caption         =   "Form2"
-   ClientHeight    =   6210
+Begin VB.Form frmID 
+   Caption         =   "Form1"
+   ClientHeight    =   6540
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   9960
-   LinkTopic       =   "Form2"
-   ScaleHeight     =   10215
-   ScaleWidth      =   18960
+   ClientWidth     =   9315
+   LinkTopic       =   "Form1"
+   Picture         =   "frmID.frx":0000
+   ScaleHeight     =   6540
+   ScaleWidth      =   9315
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton Command1 
+      Caption         =   "AÑADIR"
+      BeginProperty Font 
+         Name            =   "System"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   495
+      Left            =   2160
+      TabIndex        =   5
+      Top             =   3960
+      Width           =   1095
+   End
+   Begin VB.TextBox txtIDC 
+      DataField       =   "Id"
+      DataSource      =   "Adodc1"
+      Height          =   375
+      Left            =   960
+      TabIndex        =   4
+      Top             =   3960
+      Width           =   855
+   End
+   Begin VB.PictureBox Picture1 
+      BackColor       =   &H00808080&
+      Height          =   255
+      Left            =   0
+      ScaleHeight     =   195
+      ScaleWidth      =   5955
+      TabIndex        =   0
+      Top             =   720
+      Width           =   6015
+   End
    Begin MSAdodcLib.Adodc Adodc1 
       Height          =   330
       Left            =   7560
       Top             =   3000
+      Visible         =   0   'False
       Width           =   1215
       _ExtentX        =   2143
       _ExtentY        =   582
@@ -25,7 +63,7 @@ Begin VB.Form frmbuscarusuario
       CommandTimeout  =   30
       CursorType      =   3
       LockType        =   3
-      CommandType     =   8
+      CommandType     =   2
       CursorOptions   =   0
       CacheSize       =   50
       MaxRecords      =   0
@@ -37,14 +75,14 @@ Begin VB.Form frmbuscarusuario
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   ""
-      OLEDBString     =   ""
+      Connect         =   $"frmID.frx":3D2BA
+      OLEDBString     =   $"frmID.frx":3D382
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
       UserName        =   ""
       Password        =   ""
-      RecordSource    =   ""
+      RecordSource    =   "Cliente"
       Caption         =   ""
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
@@ -57,75 +95,17 @@ Begin VB.Form frmbuscarusuario
       EndProperty
       _Version        =   393216
    End
-   Begin VB.PictureBox Picture1 
-      BackColor       =   &H00C0FFC0&
-      Height          =   255
-      Left            =   0
-      ScaleHeight     =   195
-      ScaleWidth      =   5955
-      TabIndex        =   7
-      Top             =   720
-      Width           =   6015
-   End
-   Begin VB.Frame frm 
-      Caption         =   "Buscar por:"
-      Height          =   1935
-      Left            =   0
-      TabIndex        =   2
-      Top             =   1080
-      Width           =   6015
-      Begin VB.TextBox txtbuscar 
-         Height          =   495
-         Left            =   360
-         TabIndex        =   6
-         Top             =   1080
-         Width           =   5295
-      End
-      Begin VB.OptionButton opbuscar 
-         Caption         =   "Nombre"
-         Height          =   375
-         Index           =   0
-         Left            =   480
-         TabIndex        =   5
-         Top             =   480
-         Width           =   1455
-      End
-      Begin VB.OptionButton opbuscar 
-         Caption         =   "Apellido"
-         Height          =   375
-         Index           =   1
-         Left            =   2400
-         TabIndex        =   4
-         Top             =   480
-         Width           =   1455
-      End
-      Begin VB.OptionButton opbuscar 
-         Caption         =   "Cedula"
-         Height          =   375
-         Index           =   2
-         Left            =   4320
-         TabIndex        =   3
-         Top             =   480
-         Width           =   1455
-      End
-   End
-   Begin VB.CommandButton cmdcerrar 
-      Caption         =   "&Cerrar"
-      Height          =   375
-      Left            =   1320
-      TabIndex        =   0
-      Top             =   5280
-      Width           =   3135
-   End
    Begin MSDataGridLib.DataGrid DataGrid1 
+      Bindings        =   "frmID.frx":3D44A
       Height          =   1935
       Left            =   0
       TabIndex        =   1
-      Top             =   3120
+      Top             =   1080
       Width           =   6015
       _ExtentX        =   10610
       _ExtentY        =   3413
       _Version        =   393216
+      BackColor       =   8421504
       HeadLines       =   1
       RowHeight       =   15
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -182,9 +162,26 @@ Begin VB.Form frmbuscarusuario
          EndProperty
       EndProperty
    End
+   Begin VB.Label Label2 
+      Caption         =   "ID"
+      BeginProperty Font 
+         Name            =   "System"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   360
+      TabIndex        =   3
+      Top             =   3960
+      Width           =   495
+   End
    Begin VB.Label Label1 
       Alignment       =   2  'Center
-      BackColor       =   &H00FFFFFF&
+      BackColor       =   &H00808080&
       Caption         =   "Buscar Cliente"
       BeginProperty Font 
          Name            =   "OCR A Extended"
@@ -197,13 +194,21 @@ Begin VB.Form frmbuscarusuario
       EndProperty
       Height          =   615
       Left            =   720
-      TabIndex        =   8
+      TabIndex        =   2
       Top             =   0
       Width           =   4575
    End
 End
-Attribute VB_Name = "frmbuscarusuario"
+Attribute VB_Name = "frmID"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+Private Sub Command1_Click()
+Cliente = txtIDC
+frmfactura.Show
+frmfactura.txtcliente = Cliente
+
+
+End Sub
+

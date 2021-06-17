@@ -3,18 +3,29 @@ Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Begin VB.Form frmproveedor 
    Caption         =   "Form1"
-   ClientHeight    =   7035
+   ClientHeight    =   6975
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   11220
+   ClientWidth     =   11805
+   BeginProperty Font 
+      Name            =   "System"
+      Size            =   12
+      Charset         =   0
+      Weight          =   700
+      Underline       =   0   'False
+      Italic          =   0   'False
+      Strikethrough   =   0   'False
+   EndProperty
    LinkTopic       =   "Form1"
-   ScaleHeight     =   7035
-   ScaleWidth      =   11220
-   StartUpPosition =   3  'Windows Default
+   Picture         =   "frmproveedor.frx":0000
+   ScaleHeight     =   6975
+   ScaleWidth      =   11805
+   StartUpPosition =   2  'CenterScreen
    Begin MSAdodcLib.Adodc Adodc2 
       Height          =   375
       Left            =   8880
       Top             =   2280
+      Visible         =   0   'False
       Width           =   1215
       _ExtentX        =   2143
       _ExtentY        =   661
@@ -37,8 +48,8 @@ Begin VB.Form frmproveedor
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   $"frmproveedor.frx":0000
-      OLEDBString     =   $"frmproveedor.frx":00C8
+      Connect         =   $"frmproveedor.frx":1A7FB
+      OLEDBString     =   $"frmproveedor.frx":1A8C3
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -58,10 +69,10 @@ Begin VB.Form frmproveedor
       _Version        =   393216
    End
    Begin MSDataGridLib.DataGrid DataGrid1 
-      Bindings        =   "frmproveedor.frx":0190
+      Bindings        =   "frmproveedor.frx":1A98B
       Height          =   2775
       Left            =   960
-      TabIndex        =   13
+      TabIndex        =   12
       Top             =   3120
       Width           =   8895
       _ExtentX        =   15690
@@ -124,120 +135,103 @@ Begin VB.Form frmproveedor
    End
    Begin VB.PictureBox Picture1 
       BackColor       =   &H00000000&
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   135
       Left            =   0
       ScaleHeight     =   75
       ScaleWidth      =   9675
-      TabIndex        =   8
+      TabIndex        =   7
       Top             =   720
       Width           =   9735
    End
    Begin VB.TextBox Text1 
       DataField       =   "Ruc"
       DataSource      =   "Adodc2"
-      Height          =   495
-      Left            =   1800
-      TabIndex        =   7
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   405
+      Left            =   1440
+      TabIndex        =   6
       Top             =   2280
-      Width           =   2775
+      Width           =   1815
    End
    Begin VB.TextBox Text4 
       DataField       =   "Nombre"
       DataSource      =   "Adodc2"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   495
       Left            =   1800
-      TabIndex        =   6
+      TabIndex        =   5
       Top             =   960
       Width           =   2775
    End
    Begin VB.TextBox Text5 
       DataField       =   "Contacto"
       DataSource      =   "Adodc2"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   495
-      Left            =   7080
-      TabIndex        =   5
+      Left            =   6840
+      TabIndex        =   4
       Top             =   960
       Width           =   2775
    End
    Begin VB.CommandButton cmdNuevo 
       Caption         =   "Nuevo"
-      BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   495
       Left            =   480
-      TabIndex        =   4
+      TabIndex        =   3
       Top             =   6120
       Width           =   1455
    End
    Begin VB.CommandButton Command2 
       Caption         =   "Guardar"
-      BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   495
-      Left            =   8400
-      TabIndex        =   3
+      Left            =   6240
+      TabIndex        =   2
       Top             =   6120
       Width           =   1455
    End
    Begin VB.CommandButton Command3 
       Caption         =   "Eliminar"
-      BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   495
       Left            =   2400
-      TabIndex        =   2
-      Top             =   6120
-      Width           =   1455
-   End
-   Begin VB.CommandButton Command4 
-      Caption         =   "Buscar"
-      BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   495
-      Left            =   6360
       TabIndex        =   1
       Top             =   6120
       Width           =   1455
    End
    Begin VB.CommandButton cmdCerrar 
       Caption         =   "Cerrar"
-      BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   495
       Left            =   4440
       TabIndex        =   0
@@ -258,61 +252,34 @@ Begin VB.Form frmproveedor
       EndProperty
       Height          =   615
       Left            =   3600
-      TabIndex        =   12
+      TabIndex        =   11
       Top             =   0
       Width           =   2295
    End
    Begin VB.Label Label2 
       BackColor       =   &H00FFFFFF&
       Caption         =   "RUC:"
-      BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   15.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   375
       Left            =   480
-      TabIndex        =   11
+      TabIndex        =   10
       Top             =   2400
       Width           =   735
    End
    Begin VB.Label Label5 
       BackColor       =   &H00FFFFFF&
       Caption         =   "Nombre:"
-      BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   15.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   375
       Left            =   240
-      TabIndex        =   10
+      TabIndex        =   9
       Top             =   1080
       Width           =   1335
    End
    Begin VB.Label Label6 
       BackColor       =   &H00FFFFFF&
       Caption         =   "Contacto:"
-      BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   15.75
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
       Height          =   375
-      Left            =   5160
-      TabIndex        =   9
+      Left            =   4920
+      TabIndex        =   8
       Top             =   1080
       Width           =   1695
    End
@@ -325,8 +292,8 @@ Attribute VB_Exposed = False
 
 
 Private Sub cmdCerrar_Click()
-If cmdcerrar.Caption = "&Cancelar" Then
-        cmdcerrar.Caption = "&Cerrar"
+If cmdCerrar.Caption = "&Cancelar" Then
+        cmdCerrar.Caption = "&Cerrar"
         cmdNuevo.Caption = "&Nuevo"
         cmdEliminar.Enabled = True
         txtNombre.Text = ""
@@ -340,6 +307,9 @@ If cmdcerrar.Caption = "&Cancelar" Then
             Unload Me
         End If
     End If
+    frmproveedor.Hide
+    frmmenu.Show
+    
 
 End Sub
 

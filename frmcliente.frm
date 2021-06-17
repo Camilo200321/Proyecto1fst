@@ -1,21 +1,22 @@
 VERSION 5.00
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Begin VB.Form frmcliente 
-   Caption         =   "Form1"
+   Caption         =   "Clientes"
    ClientHeight    =   6855
    ClientLeft      =   120
    ClientTop       =   465
-   ClientWidth     =   12555
+   ClientWidth     =   8955
    LinkTopic       =   "Form1"
+   Picture         =   "frmcliente.frx":0000
    ScaleHeight     =   6855
-   ScaleWidth      =   12555
-   StartUpPosition =   3  'Windows Default
+   ScaleWidth      =   8955
+   StartUpPosition =   2  'CenterScreen
    Begin MSAdodcLib.Adodc Adodc3 
       Height          =   375
-      Left            =   9000
-      Top             =   1920
-      Width           =   1335
-      _ExtentX        =   2355
+      Left            =   3720
+      Top             =   5160
+      Width           =   1215
+      _ExtentX        =   2143
       _ExtentY        =   661
       ConnectMode     =   0
       CursorLocation  =   3
@@ -36,8 +37,8 @@ Begin VB.Form frmcliente
       ForeColor       =   -2147483640
       Orientation     =   0
       Enabled         =   -1
-      Connect         =   $"frmcliente.frx":0000
-      OLEDBString     =   $"frmcliente.frx":00C8
+      Connect         =   $"frmcliente.frx":678B
+      OLEDBString     =   $"frmcliente.frx":6853
       OLEDBFile       =   ""
       DataSourceName  =   ""
       OtherAttributes =   ""
@@ -70,7 +71,7 @@ Begin VB.Form frmcliente
       EndProperty
       Height          =   495
       Left            =   2640
-      TabIndex        =   7
+      TabIndex        =   6
       Top             =   960
       Width           =   3255
    End
@@ -88,7 +89,7 @@ Begin VB.Form frmcliente
       EndProperty
       Height          =   495
       Left            =   2640
-      TabIndex        =   6
+      TabIndex        =   5
       Top             =   1680
       Width           =   3255
    End
@@ -106,96 +107,80 @@ Begin VB.Form frmcliente
       EndProperty
       Height          =   495
       Left            =   2640
-      TabIndex        =   5
+      TabIndex        =   4
       Top             =   2400
       Width           =   3255
    End
    Begin VB.CommandButton cmdNuevo 
       Caption         =   "&Nuevo"
       BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   20.25
+         Name            =   "System"
+         Size            =   12
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
       Left            =   0
-      TabIndex        =   4
-      Top             =   4320
+      TabIndex        =   3
+      Top             =   3720
       Width           =   1935
    End
    Begin VB.CommandButton cmdGuardar 
       Caption         =   "&Guardar"
       BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   20.25
+         Name            =   "System"
+         Size            =   12
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
       Left            =   2280
-      TabIndex        =   3
-      Top             =   4320
+      TabIndex        =   2
+      Top             =   3720
       Width           =   1935
    End
    Begin VB.CommandButton cmdEliminar 
       Caption         =   "&Eliminar"
       BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   15.75
+         Name            =   "System"
+         Size            =   12
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   4680
-      TabIndex        =   2
-      Top             =   4200
-      Width           =   1935
-   End
-   Begin VB.CommandButton cmdBuscar 
-      Caption         =   "&Buscar"
-      BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   18
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   615
-      Left            =   9240
+      Left            =   4560
       TabIndex        =   1
-      Top             =   4320
+      Top             =   3720
       Width           =   1935
    End
    Begin VB.CommandButton cmdCerrar 
       Caption         =   "&Cerrar"
       BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   18
+         Name            =   "System"
+         Size            =   12
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
       Height          =   615
-      Left            =   6960
+      Left            =   6840
       TabIndex        =   0
-      Top             =   4200
+      Top             =   3720
       Width           =   1935
    End
    Begin VB.Label Label2 
+      Alignment       =   1  'Right Justify
       AutoSize        =   -1  'True
       Caption         =   "Nombre:"
       BeginProperty Font 
@@ -209,11 +194,12 @@ Begin VB.Form frmcliente
       EndProperty
       Height          =   375
       Left            =   840
-      TabIndex        =   12
+      TabIndex        =   10
       Top             =   1080
       Width           =   1470
    End
    Begin VB.Label Label3 
+      Alignment       =   1  'Right Justify
       AutoSize        =   -1  'True
       Caption         =   "Apellido:"
       BeginProperty Font 
@@ -226,14 +212,15 @@ Begin VB.Form frmcliente
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   720
-      TabIndex        =   11
+      Left            =   480
+      TabIndex        =   9
       Top             =   1800
       Width           =   1890
    End
    Begin VB.Label Label4 
+      Alignment       =   1  'Right Justify
       AutoSize        =   -1  'True
-      Caption         =   "Cedula"
+      Caption         =   "Cedula:"
       BeginProperty Font 
          Name            =   "OCR A Extended"
          Size            =   18
@@ -244,27 +231,10 @@ Begin VB.Form frmcliente
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   840
-      TabIndex        =   10
+      Left            =   870
+      TabIndex        =   8
       Top             =   2520
-      Width           =   1260
-   End
-   Begin VB.Label Label5 
-      AutoSize        =   -1  'True
-      BeginProperty Font 
-         Name            =   "OCR A Extended"
-         Size            =   18
-         Charset         =   0
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Height          =   375
-      Left            =   720
-      TabIndex        =   9
-      Top             =   3120
-      Width           =   210
+      Width           =   1470
    End
    Begin VB.Label Label1 
       Alignment       =   2  'Center
@@ -280,10 +250,10 @@ Begin VB.Form frmcliente
          Strikethrough   =   0   'False
       EndProperty
       Height          =   585
-      Left            =   3525
-      TabIndex        =   8
+      Left            =   2925
+      TabIndex        =   7
       Top             =   0
-      Width           =   1830
+      Width           =   2430
    End
 End
 Attribute VB_Name = "frmcliente"
@@ -293,8 +263,8 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub cmdCerrar_Click()
-If cmdcerrar.Caption = "&Cancelar" Then
-        cmdcerrar.Caption = "&Cerrar"
+If cmdCerrar.Caption = "&Cancelar" Then
+        cmdCerrar.Caption = "&Cerrar"
         cmdNuevo.Caption = "&Nuevo"
         cmdEliminar.Enabled = True
         txtNombre.Text = ""
@@ -308,6 +278,9 @@ If cmdcerrar.Caption = "&Cancelar" Then
             Unload Me
         End If
     End If
+frmcliente.Hide
+frmmenu.Show
+
 End Sub
 
 Private Sub cmdEliminar_Click()
@@ -329,4 +302,11 @@ If cmdNuevo.Caption = "&Nuevo" Then
         txtApellido.Text = ""
         txtCedula.Text = ""
 End If
+End Sub
+
+Private Sub Command1_Click()
+ Cliente = txtCedula
+ frmfactura.Show
+ frmfactura.txtcliente = Cliente
+ 
 End Sub
